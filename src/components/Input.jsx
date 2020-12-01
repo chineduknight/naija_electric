@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-import React from 'react'
 
 
  export const Input = styled.input`
-  width : 95%;
+  width : ${props => props.width};
   height: 56px;
   padding-left: 1rem;
   border-radius: .5rem;
@@ -19,4 +18,14 @@ import React from 'react'
 export const WrapperDiv = styled.div`
 width : ${props => props.width};
 margin : 1rem auto;
+`
+
+export const Button = styled.button`
+ background-color : #41DCAE;
+ border-radius : 6px;
+ padding : 1rem 2rem;
+ border-style: none;
+ color: white;
+ position: absolute;
+ right: 0;
 `
