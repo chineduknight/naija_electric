@@ -1,17 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import { Switch, Route,BrowserRouter } from "react-router-dom";
-// import { Route } from "react-router-dom";/
-import Home from './pages/Home';
+import "./App.css";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import Stepper from './components/stepper/Stepper'
 
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
-    <Switch>
-    <Route path="/" exact component={Home}/>
-    </Switch>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/stepper" exact component={Stepper} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
