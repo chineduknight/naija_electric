@@ -1,7 +1,7 @@
 import "./App.css";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Stepper from './components/stepper/Stepper'
+import Stepper from './pages/Stepper'
 
 function App() {
   return (

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap");
+
 *,
 *::before,
 *::after {
@@ -5,8 +7,45 @@
   padding: 0;
   box-sizing: inherit;
 }
+
+@font-face {
+  font-family: Axiforma;
+  src: url("./assets/fonts/axiforma/AxiformaMedium.otf");
+}
 body {
-  font-family: Muli, "Fira Sans", sans-serif;
+  font-family: "Mulish", Axiforma, "Fira Sans", sans-serif;
   box-sizing: border-box;
   /* background-color: rebeccapurple; */
+}
+.stepper-container-horizontal {
+  border: 1px solid lightsalmon;
+  box-shadow: 0 0 13px #333;
+  border-radius: 3px;
+  margin: 40px auto;
+  padding: 30px;
+  width: 60%;
+}
+
+.stepper-container-vertical {
+  border: 1px solid lightsalmon;
+  box-shadow: 0 0 13px #333;
+  border-radius: 3px;
+  margin: 40px auto;
+  padding: 30px;
+  width: 15%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons-container {
+  text-align: center;
+}
+.buttons-container button {
+  margin: 0 2rem;
+  width: 100px;
+  padding: 4px;
+  background-color: lightsalmon;
+  border: none;
 }
