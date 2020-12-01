@@ -1,9 +1,10 @@
 import React from 'react'
+import Materials from '../components/Project pofile/Materials'
 
 const Home = () => {
   return (
     <div>
-      this is good
+      <Materials/>
     </div>
   )
 }
