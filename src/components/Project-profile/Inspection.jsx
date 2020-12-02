@@ -51,7 +51,7 @@ const Inspection = (props) => {
     ]
     return (
         <Inspection.Wrapper>     
-            <h1>Materials & Equipment Used</h1>
+            <h1>Inspection Information</h1>
         <div className="container">
         {
          data.map((input,index) => {
@@ -69,7 +69,7 @@ const Inspection = (props) => {
         }
        </div>
         <Button onClick={() => history.push("/materials")}>CONTINUE</Button>
-        <Back onClick={() => props.history.goBack()}>BACK</Back>
+        <Back background="#EEFFF9" onClick={() => props.history.goBack()}>BACK</Back>
         </Inspection.Wrapper>
     )
 }
@@ -86,5 +86,9 @@ Inspection.Wrapper = styled.div`
  flex-wrap: wrap;
  justify-content : space-between;
  margin : 0 auto;
+}
+h1{
+  color: #013A29;
+  font-size: 17px;
 }
 `

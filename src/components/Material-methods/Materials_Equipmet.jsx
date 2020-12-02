@@ -1,9 +1,11 @@
 import React from 'react';
-import {Input, Labels, WrapperDiv, Button, Back} from '../Input';
-import styled from '@emotion/styled'
+import {Input, Labels, Button, Back} from '../Input';
+import styled from '@emotion/styled';
+import { useHistory } from "react-router-dom";
 
 
 const MaterialsEquipmemt = (props) => {
+  let history = useHistory();
     const data = [
         {
           placeholder: "Enter Size",
@@ -110,7 +112,7 @@ const MaterialsEquipmemt = (props) => {
     ]
     return (
      <MaterialsEquipmemt.Wrapper>
-       <h1>Inspection Information</h1>
+       <h1>Materials & Equipment Used</h1>
        <div className="header">
          <p>Equipment Type</p>
          <p>Size/Rating</p>
@@ -130,7 +132,7 @@ const MaterialsEquipmemt = (props) => {
         {
          data.map((input,index) => {
     return(
-        <div className="container_div">
+        <div className="container_div" key={index}>
         <Labels>{input.label}</Labels>
         <Input
          type={input.type}
@@ -143,8 +145,9 @@ const MaterialsEquipmemt = (props) => {
         }
        </div>
        </div>
-        <Button>CONTINUE</Button>
-        <Back onClick={() => props.history.goBack()}>BACK</Back>
+       <p className="add">+ Add New Equipment Type</p>
+        <Button   onClick={() => history.push("/materials/step2")}>CONTINUE</Button>
+        <Back background="#EEFFF9" onClick={() => props.history.goBack()}>BACK</Back>
      </MaterialsEquipmemt.Wrapper>
     )
 }
@@ -154,6 +157,10 @@ MaterialsEquipmemt.Wrapper = styled.div`
   margin : 0 auto;
  width : 50%;
  position: relative;
+ h1{
+  color: #013A29;
+  font-size: 17px;
+}
  .header{
   display : flex;
  justify-content : space-between;
@@ -191,5 +198,15 @@ MaterialsEquipmemt.Wrapper = styled.div`
   width: 32%;
    height: 20%;
  }
+}
+.add{
+    background-color: #F5F5F5;
+    border-radius : 6px;
+    padding : 1rem 1.6rem;
+    border-style: none;
+    font-size: 12px;
+    margin-top: 1.4rem;
+    cursor: pointer;
+    width: 32%;
 }
 `

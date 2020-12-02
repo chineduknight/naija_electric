@@ -38,8 +38,10 @@ export const Back = styled.button`
   padding : 1rem 3rem;
   border-style: none;
   color : #41DCAE;
-  background-color: #EEFFF9;
+  background-color : ${props => props.background};
   font-size: 14px;
-  margin-top: 3rem;
+  margin-top: 2rem;
   cursor: pointer;
+  color : #6C6C6D;
+  line-height: 19px;
 `

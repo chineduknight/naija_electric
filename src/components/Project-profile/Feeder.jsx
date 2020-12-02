@@ -62,7 +62,7 @@ import { useHistory } from "react-router-dom";
         }
        </div>
         <Button onClick={() => history.push("/feeder/inspection")}>CONTINUE</Button>
-        <Back onClick={() => props.history.goBack()}>BACK</Back>
+        <Back background="#EEFFF9" onClick={() => props.history.goBack()}>BACK</Back>
         </Feeder.Wrapper>
     )
  }
@@ -79,5 +79,9 @@ import { useHistory } from "react-router-dom";
  flex-wrap: wrap;
  justify-content : space-between;
  margin : 0 auto;
+}
+h1{
+  color: #013A29;
+  font-size: 17px;
 }
  `
