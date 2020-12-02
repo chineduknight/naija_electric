@@ -37,7 +37,7 @@ const StepHolder = () => {
         setmainStep(3)
       }
       if (newStep === 7) {
-        history.push("/das");
+        history.push("/certificate");
       }
     }
   };
