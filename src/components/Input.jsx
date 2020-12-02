@@ -28,4 +28,18 @@ export const Button = styled.button`
  color: white;
  position: absolute;
  right: 0;
+ margin-top: 3rem;
+ cursor: pointer;
+`
+export const Back = styled.button`
+  position: absolute;
+  left: 0;
+  border-radius : 6px;
+  padding : 1rem 3rem;
+  border-style: none;
+  color : #41DCAE;
+  background-color: #EEFFF9;
+  font-size: 14px;
+  margin-top: 3rem;
+  cursor: pointer;
 `

@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import React from 'react'
 import {Input, Labels, WrapperDiv, Button} from '../Input';
+import { useHistory } from "react-router-dom";
 
 
-
-const Materials = () => {
+const Materials = (props) => {
+  let history = useHistory();
    const data = [
        {
          label : "Project Type",
@@ -55,7 +56,7 @@ const Materials = () => {
              })
             }
            </div>
-            <Button>CONTINUE</Button>
+            <Button onClick={() => history.push("/feeder")}>CONTINUE</Button>
         </Materials.Wrapper>
      );
 }

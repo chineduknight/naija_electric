@@ -1,5 +1,5 @@
 import React from 'react'
-import Materials from '../components/Project pofile/Materials'
+import Materials from '../components/Project-profile/Materials'
 
 const Home = () => {
   return (
