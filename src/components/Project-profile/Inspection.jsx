@@ -1,10 +1,8 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import {Input, Labels, WrapperDiv, Button, Back} from '../Input';
-import { useHistory } from "react-router-dom";
+import {Input, Labels, WrapperDiv} from '../Input';
 
-const Inspection = (props) => {
-    let history = useHistory();
+const Inspection = () => {
     const data = [
         {
           label : "Executing Body",

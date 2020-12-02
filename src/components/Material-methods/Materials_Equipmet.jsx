@@ -1,9 +1,9 @@
 import React from 'react';
-import {Input, Labels, Button, Back} from '../Input';
+import {Input, Labels} from '../Input';
 import styled from '@emotion/styled'
 
 
-const MaterialsEquipmemt = (props) => {
+const MaterialsEquipmemt = () => {
     const data = [
         {
           placeholder: "Enter Size",
@@ -128,7 +128,7 @@ const MaterialsEquipmemt = (props) => {
        
         <div className="container">
         {
-         data.map((input,index) => {
+         data.map((input) => {
     return(
         <div className="container_div">
         <Labels>{input.label}</Labels>

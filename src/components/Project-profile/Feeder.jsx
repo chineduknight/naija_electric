@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled';
-import {Input, Labels, WrapperDiv, Button, Back} from '../Input';
-import { useHistory } from "react-router-dom";
+import {Input, Labels, WrapperDiv} from '../Input';
 
- const Feeder = (props) => {
-    let history = useHistory();
+ const Feeder = () => {
     const data = [
         {
           label : "Name of the Feeder Line ",
