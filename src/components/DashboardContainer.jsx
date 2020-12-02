@@ -36,7 +36,6 @@ const DashboardContainer = ({children}) => {
     const isActive = (route) => {
         return history.location.pathname === route;
     }
-    console.log(history.location);
   return (
     <DashboardContainer.Wrapper>
       <div className="left-panel">

@@ -88,7 +88,7 @@ const Dashboard = () => {
                 <div className="text">
                   <h3>Recent Inspections</h3>
                   <h4>See All</h4>
-                </div>
+                </div> 
                 <CustomTable columns={columns} dataSource={dataSource} />
               </div>
               <div className="chart-container">
@@ -112,10 +112,14 @@ Dashboard.Wrapper = styled.div`
         font-weight: 300;
         font-size: 13px;
         line-height: 16px;
-        padding: 10px 15px;
+        padding: 15px 20px;
         width: 330px;
         color: #C4C4C4;
+        :focus{
+          outline: none;
+        }
     }
+    
     .card-container{
         margin-top: 50px;
         display: flex;
@@ -125,6 +129,7 @@ Dashboard.Wrapper = styled.div`
     .main-lower{
       margin-top: 40px;
       display: flex;
+      flex-wrap: wrap;
       .table-container{
         width: 60%;
         .text{
@@ -166,6 +171,8 @@ Dashboard.Wrapper = styled.div`
           background: #ffffff;  
           height: 400px;
           margin-top: 50px;
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.05);
+          border-radius: 20px;
         }
       }
     }
