@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
-
+import firstImg from "../../assets/images/first.svg";
 
 const Stepper = (props) => {
   const [steps, setSteps] = useState([]);
+  const [percentComplete, setpercentComplete] = useState(0)
   useEffect(() => {
     const { steps, currentStepNumber } = props;
 
@@ -19,6 +20,12 @@ const Stepper = (props) => {
     const currentSteps = updateStep(currentStepNumber, stepsState);
 
     setSteps(currentSteps);
+    console.log("Percent achieve",
+    Math.round((currentStepNumber/steps.length) * 100))
+
+    setpercentComplete(Math.round((currentStepNumber/steps.length) * 100) + 
+    Math.round((1/steps.length) * 100)
+    )
   }, [props]);
 
   const updateStep = (stepNumber, steps) => {
@@ -64,137 +71,143 @@ const Stepper = (props) => {
 
     return newSteps;
   };
-  const { direction, stepColor } = props;
+  const { direction } = props;
   const stepsJSX = steps.map((step, index) => {
     return (
-      <div className="step-wrapper" key={index}>
-        <div
-          className={`step-number ${
-            step.selected ? "step-number-selected" : "step-number-disabled"
-          }`}
-          style={{ background: `${step.selected ? stepColor : "none"}` }}
-        >
-          {step.completed ? <span>&#10003;</span> : index + 1}
-        </div>
-        <div
-          className={`step-description ${
-            step.highlighted && "step-description-active"
-          }`}
-        >
-          {step.description}
-        </div>
-        {index !== steps.length - 1 && (
-          <div className={`divider-line divider-line-${steps.length} ${step.completed ? "active" :""}`} />
-        )}
+      <div className="main-wrapper">
+        <img src={firstImg} alt="firstImg" />
+        <p className={`desc ${step.selected ? "step-active" :""}`}> {step.description} </p>
       </div>
+      // <div className="step-wrapper" key={index}>
+      //   <div
+      //     className={`step-number ${
+      //       step.selected ? "step-number-selected" : "step-number-disabled"
+      //     }`}
+      //     style={{ background: `${step.selected ? stepColor : "none"}` }}
+      //   >
+      //     {step.completed ? <span>&#10003;</span> : index + 1}
+      //     <img src={firstImg} alt="firstImg" />
+      //   </div>
+      //   <div
+      //     className={`step-description ${
+      //       step.highlighted && "step-description-active"
+      //     }`}
+      //   >
+      //     {step.description}
+      //   </div>
     );
   });
 
-  return <Stepper.Wrapper>
-  <div className={`stepper-wrapper-${direction}`}>
-  {stepsJSX}
-  </div>
-  </Stepper.Wrapper>;
+  return (
+    <Stepper.Wrapper percent={percentComplete}>
+      <div className={`stepper-wrapper-${direction}`}>
+        <div className="progress-bar">
+          <div className="progress"></div>
+        </div>
+        {stepsJSX}
+      </div>
+    </Stepper.Wrapper>
+  );
 };
 
 Stepper.Wrapper = styled.div`
-.stepper-wrapper-horizontal {
-  display: flex;
-  justify-content: space-between;
-
-  .step-wrapper {
-    width: 23%;
+  .stepper-wrapper-horizontal {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
-  }
-
-  .step-number {
-    border-radius: 50%;
-    border: 1px solid grey;
-    width: 20px;
-    height: 20px;
-    padding: 3px;
-    text-align: center;
-    margin-bottom: 1.2rem;
-  }
-
-  .divider-line {
+    .progress-bar {
+    overflow: hidden;
     height: 2px;
     background-color: #F5F5F5;
-    position: absolute;
-    // top: 20%;
-    left: 40%;
+      width: 100%;
+      position: absolute;
+      bottom:-10px;
+    .progress {
+      border-radius: 7px;
+      /* width: 20%; */
+      width: ${(props) => props.percent}%;
+      height: 100%;
+      background-color: #2039CC;
+    }
   }
-  .active {
-    background-color: #2039CC;
+    .step-wrapper {
+      width: 23%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .step-number {
+      border-radius: 50%;
+      border: 1px solid grey;
+      width: 20px;
+      height: 20px;
+      padding: 3px;
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .divider-line {
+      height: 2px;
+      background-color: #f5f5f5;
+      position: absolute;
+      /* top: 20%; */
+      left: 40%;
+      bottom: 0;
+    }
+    .active {
+      background-color: #2039cc;
+    }
+    .divider-line-2 {
+      width: 296%;
+    }
+
+    .divider-line-3 {
+      width: 125%;
+    }
+
+    .divider-line-4 {
+      width: 70%;
+    }
+
+    .divider-line-5 {
+      width: 100%;
+    }
+
+    // new styles
+    .main-wrapper {
+      display: flex;
+      position: relative;
+      p {
+        margin-left: 1rem;
+      }
+      .desc {
+        color: gray;
+      }
+      .step-active{
+        color: #000;
+        font-weight: bold;
+
+      }
+    }
   }
-  .divider-line-2 {
-    width: 296%;
+
+  .step-number-selected {
+    // background: purple;
+    border: 1px solid #bdbdbd;
+    color: #fff;
   }
 
-  .divider-line-3 {
-    width: 125%;
+  .step-number-disabled {
+    border: 1px solid #838383;
   }
 
-  .divider-line-4 {
-    width: 70%;
+  .step-description-active {
+    font-weight: bold;
+    color: #000;
   }
-
-  .divider-line-5 {
-    width: 100%;
-  }
-}
-
-.stepper-wrapper-vertical {
-  .step-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.2rem;
-    position: relative;
-  }
-
-  .step-number {
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    padding: 4.5px 4px 4px;
-    text-align: center;
-    font-size: 95%;
-  }
-
-  .step-description {
-    margin-left: 1.2rem;
-    padding-bottom: 3px;
-  }
-
-  .divider-line {
-    height: 17px;
-    width: 1px;
-    background-color: #bdbdbd;
-    position: absolute;
-    top: 100%;
-    left: 6.4%;
-  }
-}
-
-.step-number-selected {
-  // background: purple;
-  border: 1px solid #bdbdbd;
-  color: #fff;
-}
-
-.step-number-disabled {
-  border: 1px solid #838383;
-}
-
-.step-description-active {
-  font-weight: bold;
-}
-
-
-`
+`;
 
 export default Stepper;

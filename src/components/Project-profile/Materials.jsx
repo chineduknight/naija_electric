@@ -64,8 +64,8 @@ const Materials = (props) => {
 export default Materials;
 
 Materials.Wrapper = styled.div`
- margin : 0 auto;
- width : 40%;
+ /* margin : 0 auto;
+ width : 40%; */
  position: relative;
 .container{
  width : 100%;

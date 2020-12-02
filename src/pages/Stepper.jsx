@@ -4,11 +4,10 @@ import Stepper from "../components/stepper/Stepper";
 const StepHolder = () => {
   const [currentStep, setcurrentStep] = useState(1);
   const stepsArray = [
-    "Create your accounts",
-    "Add personal info",
-    "Add payment details",
-    "Complete registration",
-    "Registration complete",
+    "Project Basic info",
+    "Feeder Information",
+    "Inspection",
+   
   ];
   const handleClick = (clickType) => {
     let newStep = currentStep;
