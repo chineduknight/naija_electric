@@ -49,7 +49,7 @@ const Inspection = () => {
     ]
     return (
         <Inspection.Wrapper>     
-            <h1>Materials & Equipment Used</h1>
+            <h1>Inspection Information</h1>
         <div className="container">
         {
          data.map((input,index) => {
@@ -83,5 +83,9 @@ Inspection.Wrapper = styled.div`
  flex-wrap: wrap;
  justify-content : space-between;
  margin : 0 auto;
+}
+h1{
+  color: #013A29;
+  font-size: 17px;
 }
 `

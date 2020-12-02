@@ -77,4 +77,8 @@ import {Input, Labels, WrapperDiv} from '../Input';
  justify-content : space-between;
  margin : 0 auto;
 }
+h1{
+  color: #013A29;
+  font-size: 17px;
+}
  `

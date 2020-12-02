@@ -5,6 +5,8 @@ import Stepper from './pages/Stepper'
 import Feeder from "./components/Project-profile/Feeder";
 import Inspection from "./components/Project-profile/Inspection";
 import MaterialsEquipment from "./components/Material-methods/Materials_Equipmet" 
+import MaterialsEquipment2 from "./components/Material-methods/Materials_Equipment2" 
+import MaterialsEquipment3 from "./components/Material-methods/Materials_Equipment3"; 
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/feeder" exact component={Feeder}/>
           <Route path="/feeder/inspection" exact component={Inspection}/>
           <Route path="/materials" exact component={MaterialsEquipment}/>
+          <Route path="/materials/step2" exact component={MaterialsEquipment2}/>
+          <Route path="/materials/step3" exact component={MaterialsEquipment3}/>
         </Switch>
       </BrowserRouter>
     </div>
