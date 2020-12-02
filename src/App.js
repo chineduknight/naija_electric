@@ -1,6 +1,5 @@
 import "./App.css";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
 import Stepper from './pages/Stepper';
 import Certificate from './pages/Certificate';
 import Dashboard from './pages/Dashboard';
