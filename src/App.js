@@ -7,13 +7,14 @@ import Inspection from "./components/Project-profile/Inspection";
 import MaterialsEquipment from "./components/Material-methods/Materials_Equipmet" 
 import MaterialsEquipment2 from "./components/Material-methods/Materials_Equipment2" 
 import MaterialsEquipment3 from "./components/Material-methods/Materials_Equipment3"; 
-
+import Das from './pages/Das'
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/das" exact component={Das} />
           <Route path="/stepper" exact component={Stepper} />
           <Route path="/feeder" exact component={Feeder}/>
           <Route path="/feeder/inspection" exact component={Inspection}/>

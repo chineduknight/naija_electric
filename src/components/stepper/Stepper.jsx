@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import firstImg from "../../assets/images/first.svg";
+import secondImg from "../../assets/images/second.svg";
+import thirdImg from "../../assets/images/third.svg";
 
 const Stepper = (props) => {
   const [steps, setSteps] = useState([]);
@@ -20,8 +22,8 @@ const Stepper = (props) => {
     const currentSteps = updateStep(currentStepNumber, stepsState);
 
     setSteps(currentSteps);
-    console.log("Percent achieve",
-    Math.round((currentStepNumber/steps.length) * 100))
+    // console.log("Percent achieve",
+    // Math.round((currentStepNumber/steps.length) * 100))
 
     setpercentComplete(Math.round((currentStepNumber/steps.length) * 100) + 
     Math.round((1/steps.length) * 100)
@@ -75,7 +77,15 @@ const Stepper = (props) => {
   const stepsJSX = steps.map((step, index) => {
     return (
       <div className="main-wrapper">
-        <img src={firstImg} alt="firstImg" />
+      
+        { !props.noline&& index===0 && <img src={firstImg} alt="firstImg" />}
+        { !props.noline&&index===1 && <img src={secondImg} alt="firstImg" />}
+        { !props.noline&&index===2 && <img src={thirdImg} alt="firstImg" />}
+     
+      {
+        props.noline&&<span className="step-number">&#10003;</span>
+      }
+    
         <p className={`desc ${step.selected ? "step-active" :""}`}> {step.description} </p>
       </div>
       // <div className="step-wrapper" key={index}>
@@ -101,9 +111,12 @@ const Stepper = (props) => {
   return (
     <Stepper.Wrapper percent={percentComplete}>
       <div className={`stepper-wrapper-${direction}`}>
-        <div className="progress-bar">
+      
+      {!props.noline &&
+      
+      <div className="progress-bar">
           <div className="progress"></div>
-        </div>
+        </div>}
         {stepsJSX}
       </div>
     </Stepper.Wrapper>
@@ -147,6 +160,9 @@ Stepper.Wrapper = styled.div`
       padding: 3px;
       text-align: center;
       margin-bottom: 1.2rem;
+      background-color: #EEFFF9;
+      color:#41DCAE;
+      border:none;
     }
 
     .divider-line {

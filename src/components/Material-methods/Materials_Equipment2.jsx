@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {Input, Labels, Button, Back} from '../Input';
-import { useHistory } from "react-router-dom";
+import {Input, Labels} from '../Input';
 import Plus from "../../assets/images/Vector.svg"
 
-const Materials_Equipment2 = (props) => {
-    let history = useHistory();
+const Materials_Equipment2 = () => {
     const data = [
         {
           placeholder: "Enter Specification",
@@ -69,8 +67,6 @@ const Materials_Equipment2 = (props) => {
        </div>
        </div>
        <p className="add"> <img src={Plus} alt="plus"/>  Add New Data</p>
-       <Button  onClick={() => history.push("/materials/step3")}>COMPLETE STAGE</Button>
-         <Back background="#EEFFF9" onClick={() => props.history.goBack()}>BACK</Back> 
         </Materials_Equipment2.Wrapper>
      );
 }
@@ -78,8 +74,8 @@ const Materials_Equipment2 = (props) => {
 export default Materials_Equipment2;
 
 Materials_Equipment2.Wrapper = styled.div`
-  margin : 0 auto;
- width : 50%;
+  /* margin : 0 auto;
+ width : 50%; */
  position: relative;
  h1{
   color: #013A29;

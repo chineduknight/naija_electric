@@ -30,6 +30,7 @@ export const Button = styled.button`
  right: 0; */
  margin-top: 3rem;
  cursor: pointer;
+ outline:none;
 `
 export const Back = styled.button`
   /* position: absolute;
@@ -44,4 +45,5 @@ export const Back = styled.button`
   cursor: pointer;
   color : #6C6C6D;
   line-height: 19px;
+  outline:none;
 `

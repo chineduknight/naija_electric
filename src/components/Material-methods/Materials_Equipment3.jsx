@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {Input, Labels, Button, Back} from '../Input';
+import {Input, Labels} from '../Input';
 import Plus from "../../assets/images/Vector.svg"
 
-const Materials_Equipment2 = (props) => {
+const Materials_Equipment2 = () => {
     const data = [
         {
           placeholder: "Enter  Resistance",
@@ -96,7 +96,6 @@ const Materials_Equipment2 = (props) => {
        </div>
        </div>
        <p className="add"> <img src={Plus} alt="plus"/>  Add New Unit Under Test</p>
-       <Button  onClick={() => console.log("sadasd")}>CONTINUE</Button>
         </Materials_Equipment2.Wrapper>
      );
 }
@@ -104,8 +103,8 @@ const Materials_Equipment2 = (props) => {
 export default Materials_Equipment2;
 
 Materials_Equipment2.Wrapper = styled.div`
-  margin : 0 auto;
- width : 50%;
+  /* margin : 0 auto;
+ width : 50%; */
  position: relative;
  h1{
   color: #013A29;
