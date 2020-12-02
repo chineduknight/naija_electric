@@ -1,6 +1,6 @@
 import React from "react";
-import Materials from "../components/Project pofile/Materials";
 import Stepper from "./Stepper";
+import Materials from '../components/Project-profile/Materials'
 import styled from "@emotion/styled";
 
 const Home = () => {
