@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Stepper from './pages/Stepper';
 import Certificate from './pages/Certificate';
+import Dashboard from './pages/Dashboard';
 import Feeder from "./components/Project-profile/Feeder";
 import Inspection from "./components/Project-profile/Inspection";
 import MaterialsEquipment from "./components/Material-methods/Materials_Equipmet" 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/stepper" exact component={Stepper} />
           <Route path="/certificate" exact component={Certificate} />
+          <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/feeder" exact component={Feeder}/>
           <Route path="/feeder/inspection" exact component={Inspection}/>
           <Route path="/materials" exact component={MaterialsEquipment}/>

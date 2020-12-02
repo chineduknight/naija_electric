@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import {useHistory} from 'react-router-dom';
 import certLogo from '../assets/images/cert-logo.png';
 import leftImg from '../assets/images/Group1.png';
 
 const Certificate = () => {
+    const history = useHistory();
   return (
     <Certificate.Wrapper>
         <div className="certificate">
@@ -21,7 +23,7 @@ const Certificate = () => {
                 </div>
                 <div className="footer-btn">
                     <button className='btn-pry1'>Download Certificate</button>
-                    <button className='btn-light'>Goto Dashboard</button>
+                    <button className='btn-light' onClick={()=> history.push('/dashboard')}>Goto Dashboard</button>
                 </div>
             </div>
         </div>
