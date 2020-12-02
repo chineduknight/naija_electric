@@ -95,7 +95,7 @@ DashboardContainer.Wrapper = styled.div`
     }
     .right-panel{
         background: #E5E5E5;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
         padding: 40px;
     }

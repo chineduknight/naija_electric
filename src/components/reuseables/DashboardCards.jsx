@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-const DashboardCard = () => {
+const DashboardCard = ({value, title, icon, theme}) => {
 
     return (
         <DashboardCard.Wrapper>
             <div className='card-icon'>
-                <span className='fa fa-edit'></span>
+                <span className={`fa ${icon}`}></span>
             </div>
             <div className='card-text'>
-                <h2>458</h2>
-                <p>Inspections</p>
+                <h2>{value}</h2>
+                <p>{title}</p>
             </div>
         </DashboardCard.Wrapper>
     )
@@ -33,27 +33,24 @@ DashboardCard.Wrapper = styled.div`
         padding: 9px 15px;
     }
     .card-text{
-        margin-left: 10px;
-        font-family: Mulish;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 16px;
-        line-height: 20px;
-        /* identical to box height */
-
-
-        color: #292929;
-    }
-    p{
-        font-family: Mulish;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height */
-
-
-        color: #C4C4C4;
+        h2{
+            margin-left: 10px;
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;  
+            color: #292929;
+        }
+        p{
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            padding-top: -15px;
+            line-height: 15px;
+            color: #C4C4C4;
+        }
     }
 `
 export default DashboardCard;
