@@ -61,8 +61,7 @@ import { useHistory } from "react-router-dom";
          })
         }
        </div>
-        <Button onClick={() => history.push("/feeder/inspection")}>CONTINUE</Button>
-        <Back onClick={() => props.history.goBack()}>BACK</Back>
+       
         </Feeder.Wrapper>
     )
  }
@@ -70,8 +69,8 @@ import { useHistory } from "react-router-dom";
  export default Feeder;
 
  Feeder.Wrapper = styled.div`
-  margin : 0 auto;
- width : 40%;
+  /* margin : 0 auto;
+ width : 40%; */
  position: relative;
 .container{
  width : 100%;

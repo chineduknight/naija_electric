@@ -26,14 +26,14 @@ export const Button = styled.button`
  padding : 1rem 2rem;
  border-style: none;
  color: white;
- position: absolute;
- right: 0;
+ /* position: absolute;
+ right: 0; */
  margin-top: 3rem;
  cursor: pointer;
 `
 export const Back = styled.button`
-  position: absolute;
-  left: 0;
+  /* position: absolute;
+  left: 0; */
   border-radius : 6px;
   padding : 1rem 3rem;
   border-style: none;

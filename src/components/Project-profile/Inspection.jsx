@@ -68,8 +68,7 @@ const Inspection = (props) => {
          })
         }
        </div>
-        <Button onClick={() => history.push("/materials")}>CONTINUE</Button>
-        <Back onClick={() => props.history.goBack()}>BACK</Back>
+       
         </Inspection.Wrapper>
     )
 }
@@ -77,8 +76,8 @@ const Inspection = (props) => {
 export default Inspection
 
 Inspection.Wrapper = styled.div`
-  margin : 0 auto;
- width : 40%;
+  /* margin : 0 auto;
+ width : 40%; */
  position: relative;
 .container{
  width : 100%;

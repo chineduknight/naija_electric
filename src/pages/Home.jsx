@@ -8,7 +8,7 @@ const Home = () => {
     <Home.Wrapper>
       <div>
         <Stepper />
-        <Materials />
+    
       </div>
     </Home.Wrapper>
   );

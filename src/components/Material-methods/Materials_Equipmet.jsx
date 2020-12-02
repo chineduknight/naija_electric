@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Labels, WrapperDiv, Button, Back} from '../Input';
+import {Input, Labels, Button, Back} from '../Input';
 import styled from '@emotion/styled'
 
 
@@ -143,16 +143,15 @@ const MaterialsEquipmemt = (props) => {
         }
        </div>
        </div>
-        <Button>CONTINUE</Button>
-        <Back onClick={() => props.history.goBack()}>BACK</Back>
+       
      </MaterialsEquipmemt.Wrapper>
     )
 }
 export default MaterialsEquipmemt;
 
 MaterialsEquipmemt.Wrapper = styled.div`
-  margin : 0 auto;
- width : 50%;
+  /* margin : 0 auto;
+ width : 50%; */
  position: relative;
  .header{
   display : flex;

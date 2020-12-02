@@ -17,14 +17,9 @@ body {
   box-sizing: border-box;
   /* background-color: rebeccapurple; */
 }
-/* .stepper-container-horizontal {
-  border: 1px solid lightsalmon;
-  box-shadow: 0 0 13px #333;
-  border-radius: 3px;
-  margin: 40px auto;
-  padding: 30px;
-  width: 60%;
-} */
+.stepper-container-horizontal {
+  margin-bottom: 2rem;
+}
 
 /* .stepper-container-vertical {
   border: 1px solid lightsalmon;
@@ -39,15 +34,14 @@ body {
   justify-content: center;
 } */
 
-.buttons-container {
+/* .buttons-container {
   text-align: center;
-  /* display: none; */
   margin-top: 2rem;
-}
-.buttons-container button {
+} */
+/* .buttons-container button {
   margin: 0 2rem;
   width: 100px;
   padding: 4px;
   background-color: lightsalmon;
   border: none;
-}
+} */

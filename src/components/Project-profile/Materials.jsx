@@ -56,7 +56,6 @@ const Materials = (props) => {
              })
             }
            </div>
-            <Button onClick={() => history.push("/feeder")}>CONTINUE</Button>
         </Materials.Wrapper>
      );
 }
