@@ -7,9 +7,11 @@ import Inspection from "../components/Project-profile/Inspection";
 import MaterialsEqup from "../components/Material-methods/Materials_Equipmet";
 import MaterialsEqup2 from "../components/Material-methods/Materials_Equipment2";
 import MaterialsEqup3 from "../components/Material-methods/Materials_Equipment3";
+import InsulationTest from "../components/Material-methods/InsulationTest"
 import { Button, Back } from "../components/Input";
 import { useHistory } from "react-router";
 import logo from '../assets/images/logo.png';
+import VoltageTest from "../components/Material-methods/VoltageTest";
 
 const StepHolder = () => {
   const [currentStep, setcurrentStep] = useState(1);
@@ -26,9 +28,10 @@ const StepHolder = () => {
   const history = useHistory();
   const handleClick = (clickType) => {
     let newStep = currentStep;
+  
     clickType === "next" ? newStep++ : newStep--;
 
-    if (newStep > 0 && newStep <= 7) {
+    if (newStep > 0 && newStep <= 9) {
       setcurrentStep(newStep);
       if (newStep === 4) {
         setmainStep(2)
@@ -36,7 +39,7 @@ const StepHolder = () => {
       if (newStep === 6) {
         setmainStep(3)
       }
-      if (newStep === 7) {
+      if (newStep === 9) {
         history.push("/certificate");
       }
     }
@@ -81,6 +84,8 @@ const StepHolder = () => {
         {currentStep === 4 && <MaterialsEqup />}
         {currentStep === 5 && <MaterialsEqup2 />}
         {currentStep === 6 && <MaterialsEqup3 />}
+        {currentStep === 7 && <InsulationTest/>}
+        {currentStep === 8 && <VoltageTest/>}
 
         <div className="button-holder">
           <Back onClick={() => handleClick()}>BACK</Back>
@@ -93,7 +98,7 @@ const StepHolder = () => {
 StepHolder.Wrapper = styled.div`
   display: grid;
   place-items: center;
-  max-width: 652px;
+  max-width: 902px;
   margin: 0 auto;
   position: relative;
   .button-holder {
