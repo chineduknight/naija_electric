@@ -12,11 +12,12 @@ import { Button, Back } from "../components/Input";
 import { useHistory } from "react-router";
 import logo from '../assets/images/logo.png';
 import VoltageTest from "../components/Material-methods/VoltageTest";
+import PaymentInfo from "../components/PaymentInfo"
 
 const StepHolder = () => {
   const [currentStep, setcurrentStep] = useState(1);
   const [mainStep, setmainStep] = useState(1);
-  console.log("currentStep:", currentStep);
+ console.log("currentStep:", currentStep);
   const stepsArray = ["Project Basic info", "Feeder Information", "Inspection"];
   const stepsArray2 = ["Materials & Equipment Used", "Transformer Particulars"];
   const stepsArray3 = [
@@ -24,11 +25,12 @@ const StepHolder = () => {
     "Insulation Test",
     "Voltage Ratio Test",
   ];
-  const MainArray = ["PROJECT PROFILE", "SUBSTATION MATERIAL & EQUIPMENT", 'TEST CARRIED OUT & RESULT OBTAINED'];
+  const stepsArray4 = ["Payment Information"]
+  const MainArray = ["PROJECT PROFILE", "SUBSTATION MATERIAL & EQUIPMENT", 'TEST CARRIED OUT & RESULT OBTAINED', "PAYMENT INFORMATION"];
   const history = useHistory();
   const handleClick = (clickType) => {
     let newStep = currentStep;
-  
+   
     clickType === "next" ? newStep++ : newStep--;
 
     if (newStep > 0 && newStep <= 9) {
@@ -40,8 +42,11 @@ const StepHolder = () => {
         setmainStep(3)
       }
       if (newStep === 9) {
+        setmainStep(4)
+      }   
+    }
+      if (newStep === 10) {
         history.push("/certificate");
-      }
     }
   };
 
@@ -70,13 +75,21 @@ const StepHolder = () => {
               currentStepNumber={currentStep - 4}
               steps={stepsArray2}
             />
-          ) : (
+          ) : currentStep >= 6 && currentStep < 9 ? (
             <Stepper
               direction="horizontal"
               currentStepNumber={currentStep - 6}
               steps={stepsArray3}
             />
-          )}
+          ) : 
+          (
+            <Stepper
+              direction="horizontal"
+              currentStepNumber={currentStep - 8}
+              steps={stepsArray4}
+            />
+          )
+          }
         </div>
         {currentStep === 1 && <Materials />}
         {currentStep === 2 && <Feeder />}
@@ -86,7 +99,7 @@ const StepHolder = () => {
         {currentStep === 6 && <MaterialsEqup3 />}
         {currentStep === 7 && <InsulationTest/>}
         {currentStep === 8 && <VoltageTest/>}
-
+        {currentStep === 9 && <PaymentInfo/>}  
         <div className="button-holder">
           <Back onClick={() => handleClick()}>BACK</Back>
           <Button onClick={() => handleClick("next")}>CONTINUE</Button>
